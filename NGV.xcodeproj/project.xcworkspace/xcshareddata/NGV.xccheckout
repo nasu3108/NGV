@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8109E063-0306-4473-897A-210DC32A9235</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NGV</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>14CB3536-6AA4-4B0A-99CC-CEFCBF1DA73C</key>
+		<string>ssh://github.com/nasu3108/NGV.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>NGV.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>14CB3536-6AA4-4B0A-99CC-CEFCBF1DA73C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/nasu3108/NGV.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>14CB3536-6AA4-4B0A-99CC-CEFCBF1DA73C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>14CB3536-6AA4-4B0A-99CC-CEFCBF1DA73C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NGV</string>
+		</dict>
+	</array>
+</dict>
+</plist>
