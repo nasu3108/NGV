@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CFF32C8F185FD09500DF90DF"
+               BlueprintIdentifier = "CFEFECFF18568CF900A5AC7C"
                BuildableName = "NGV.app"
                BlueprintName = "NGV"
                ReferencedContainer = "container:NGV.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CFF32CB3185FD09500DF90DF"
+               BlueprintIdentifier = "CFEFED2318568CF900A5AC7C"
                BuildableName = "NGVTests.xctest"
                BlueprintName = "NGVTests"
                ReferencedContainer = "container:NGV.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CFF32C8F185FD09500DF90DF"
+            BlueprintIdentifier = "CFEFECFF18568CF900A5AC7C"
             BuildableName = "NGV.app"
             BlueprintName = "NGV"
             ReferencedContainer = "container:NGV.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CFF32C8F185FD09500DF90DF"
+            BlueprintIdentifier = "CFEFECFF18568CF900A5AC7C"
             BuildableName = "NGV.app"
             BlueprintName = "NGV"
             ReferencedContainer = "container:NGV.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CFF32C8F185FD09500DF90DF"
+            BlueprintIdentifier = "CFEFECFF18568CF900A5AC7C"
             BuildableName = "NGV.app"
             BlueprintName = "NGV"
             ReferencedContainer = "container:NGV.xcodeproj">
