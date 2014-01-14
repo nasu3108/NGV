@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF05AC2F18568F150026988C /* NGImageGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = CF05AC2E18568F150026988C /* NGImageGetter.m */; };
+		CF05AC2F18568F150026988C /* NGHTMLGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = CF05AC2E18568F150026988C /* NGHTMLGetter.m */; };
+		CFDE6D941861514D00DDFB67 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDE6D911861514D00DDFB67 /* HTMLNode.m */; };
+		CFDE6D951861514D00DDFB67 /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDE6D931861514D00DDFB67 /* HTMLParser.m */; };
+		CFDE6D971861540F00DDFB67 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDE6D961861540F00DDFB67 /* libxml2.dylib */; };
 		CFEFED0418568CF900A5AC7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFEFED0318568CF900A5AC7C /* Foundation.framework */; };
 		CFEFED0618568CF900A5AC7C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFEFED0518568CF900A5AC7C /* CoreGraphics.framework */; };
 		CFEFED0818568CF900A5AC7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFEFED0718568CF900A5AC7C /* UIKit.framework */; };
@@ -36,8 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CF05AC2D18568F150026988C /* NGImageGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGImageGetter.h; sourceTree = "<group>"; };
-		CF05AC2E18568F150026988C /* NGImageGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGImageGetter.m; sourceTree = "<group>"; };
+		CF05AC2D18568F150026988C /* NGHTMLGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGHTMLGetter.h; sourceTree = "<group>"; };
+		CF05AC2E18568F150026988C /* NGHTMLGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGHTMLGetter.m; sourceTree = "<group>"; };
+		CFDE6D901861514D00DDFB67 /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
+		CFDE6D911861514D00DDFB67 /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLNode.m; sourceTree = "<group>"; };
+		CFDE6D921861514D00DDFB67 /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
+		CFDE6D931861514D00DDFB67 /* HTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLParser.m; sourceTree = "<group>"; };
+		CFDE6D961861540F00DDFB67 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		CFEFED0018568CF900A5AC7C /* NGV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NGV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFEFED0318568CF900A5AC7C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CFEFED0518568CF900A5AC7C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFDE6D971861540F00DDFB67 /* libxml2.dylib in Frameworks */,
 				CFEFED0618568CF900A5AC7C /* CoreGraphics.framework in Frameworks */,
 				CFEFED0818568CF900A5AC7C /* UIKit.framework in Frameworks */,
 				CFEFED0418568CF900A5AC7C /* Foundation.framework in Frameworks */,
@@ -84,6 +93,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CFDE6D8F1861504D00DDFB67 /* HTML-Parser */ = {
+			isa = PBXGroup;
+			children = (
+				CFDE6D901861514D00DDFB67 /* HTMLNode.h */,
+				CFDE6D911861514D00DDFB67 /* HTMLNode.m */,
+				CFDE6D921861514D00DDFB67 /* HTMLParser.h */,
+				CFDE6D931861514D00DDFB67 /* HTMLParser.m */,
+			);
+			name = "HTML-Parser";
+			sourceTree = "<group>";
+		};
 		CFEFECF718568CF900A5AC7C = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +126,7 @@
 		CFEFED0218568CF900A5AC7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CFDE6D961861540F00DDFB67 /* libxml2.dylib */,
 				CFEFED0318568CF900A5AC7C /* Foundation.framework */,
 				CFEFED0518568CF900A5AC7C /* CoreGraphics.framework */,
 				CFEFED0718568CF900A5AC7C /* UIKit.framework */,
@@ -117,6 +138,7 @@
 		CFEFED0918568CF900A5AC7C /* NGV */ = {
 			isa = PBXGroup;
 			children = (
+				CFDE6D8F1861504D00DDFB67 /* HTML-Parser */,
 				CFEFED1218568CF900A5AC7C /* NGAppDelegate.h */,
 				CFEFED1318568CF900A5AC7C /* NGAppDelegate.m */,
 				CFEFED1518568CF900A5AC7C /* Main_iPhone.storyboard */,
@@ -125,8 +147,8 @@
 				CFEFED1C18568CF900A5AC7C /* NGViewController.m */,
 				CFEFED1E18568CF900A5AC7C /* Images.xcassets */,
 				CFEFED0A18568CF900A5AC7C /* Supporting Files */,
-				CF05AC2D18568F150026988C /* NGImageGetter.h */,
-				CF05AC2E18568F150026988C /* NGImageGetter.m */,
+				CF05AC2D18568F150026988C /* NGHTMLGetter.h */,
+				CF05AC2E18568F150026988C /* NGHTMLGetter.m */,
 			);
 			path = NGV;
 			sourceTree = "<group>";
@@ -262,8 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFDE6D941861514D00DDFB67 /* HTMLNode.m in Sources */,
+				CFDE6D951861514D00DDFB67 /* HTMLParser.m in Sources */,
 				CFEFED1D18568CF900A5AC7C /* NGViewController.m in Sources */,
-				CF05AC2F18568F150026988C /* NGImageGetter.m in Sources */,
+				CF05AC2F18568F150026988C /* NGHTMLGetter.m in Sources */,
 				CFEFED1018568CF900A5AC7C /* main.m in Sources */,
 				CFEFED1418568CF900A5AC7C /* NGAppDelegate.m in Sources */,
 			);
@@ -406,8 +430,15 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NGV/NGV-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${SDK_DIR}/usr/include/libxml2/**",
+				);
 				INFOPLIST_FILE = "NGV/NGV-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "-lxml2";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -424,8 +455,15 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NGV/NGV-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${SDK_DIR}/usr/include/libxml2/**",
+				);
 				INFOPLIST_FILE = "NGV/NGV-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "-lxml2";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -6,9 +6,10 @@
 //  Copyright (c) 2013年 Yasuhiro Sato. All rights reserved.
 //
 
-#import "NGImageGetter.h"
+#import "NGHTMLGetter.h"
+#import "HTMLParser.h"
 
-@implementation NGImageGetter
+@implementation NGHTMLGetter
 @synthesize delegate;
 
 - (BOOL)getImage{
@@ -44,13 +45,34 @@
                                length:receivedData.length
                              encoding:NSUTF8StringEncoding];
     NSLog(@"%@",html);
+    
+    NSError *error;
+    HTMLParser *parser = [[HTMLParser alloc] initWithString:html error:&error];
+    
+    HTMLNode *bodyNode = [parser body];
+    
+    NSArray *nodeImages = [bodyNode findChildTags:@"img"];//imgタグの物を全部とってくる
+    NSMutableArray *imageUrls = [NSMutableArray array];
+    
+    for(HTMLNode *imageNode in nodeImages) {
+        NSString *url = [imageNode getAttributeNamed:@"src"];
+        [imageUrls addObject:url];
+    }
+    
+    NSLog(@"%@",imageUrls);
+    
     // デリゲート先がちゃんと「didFinishedLoad」というメソッドを持っているか?
     if ([self.delegate respondsToSelector:@selector(didFinishedLoad:)]) {
-        // sampleMethod1を呼び出す
-        [self.delegate didFinishedLoad:html];
+        [self.delegate didFinishedLoad:imageUrls];
+        if (error) {
+            NSLog(@"Error: %@", error);
+            return;
+        }
         return;
     }
     return;
 }
 
 @end
+
+

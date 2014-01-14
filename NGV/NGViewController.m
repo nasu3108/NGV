@@ -15,11 +15,11 @@
     [super viewDidLoad];
     //html 取得
     NSLog(@"test");
-    NGImageGetter *imageGetter = [NGImageGetter alloc];
+    NGHTMLGetter *htmlListGetter = [NGHTMLGetter alloc];
     // NGImageGetter の Delegate で指定されていた処理は
     // 私（NGVieｗController）がやりますよーという宣言
-    imageGetter.delegate = self;
-    [imageGetter getImage];
+    htmlListGetter.delegate = self;
+    [htmlListGetter getImage];
 }
 
 - (void)didReceiveMemoryWarning
@@ -28,10 +28,11 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)didFinishedLoad:(NSString *)html
+-(void)didFinishedLoad:(NSArray *)images
 {
     // labelのテキストを変更する
-    label.text = html;
+    label.text = [images objectAtIndex:0];
+    
 }
 
 @end

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NGImageGetter.h"
+#import "NGHTMLGetter.h"
 
-@interface NGViewController : UIViewController<NGImageGetterDelegate>{
+@interface NGViewController : UIViewController<NGHTMLGetterDelegate>{
     IBOutlet UILabel *label;
 }
 @end

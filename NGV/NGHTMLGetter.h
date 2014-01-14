@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol NGImageGetterDelegate<NSObject>
--(void)didFinishedLoad:(NSString *)html;
+@protocol NGHTMLGetterDelegate<NSObject>
+-(void)didFinishedLoad:(NSArray*)html;
 @end
 
-@interface NGImageGetter : NSObject{
+@interface NGHTMLGetter : NSObject<NGHTMLGetterDelegate>{
     NSMutableData *receivedData;
     
 }
 - (BOOL)getImage;
-@property (nonatomic, assign) id<NGImageGetterDelegate> delegate;
+@property (nonatomic, assign) id<NGHTMLGetterDelegate> delegate;
 @end
