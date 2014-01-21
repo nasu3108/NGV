@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "NGHTMLGetter.h"
 
-@interface NGViewController : UIViewController<NGHTMLGetterDelegate>{
-    IBOutlet UILabel *label;
+@interface NGViewController : UIViewController<NGHTMLGetterDelegate, UICollectionViewDataSource, UICollectionViewDelegate>{
+    IBOutlet UICollectionView *image_collection_view;
+    NSMutableArray *imageUrlArray;
 }
 @end

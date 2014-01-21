@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CF05AC2F18568F150026988C /* NGHTMLGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = CF05AC2E18568F150026988C /* NGHTMLGetter.m */; };
+		CFA49B0E188A348700355F0E /* UIAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA49B0D188A348700355F0E /* UIAsyncImageView.m */; };
 		CFDE6D941861514D00DDFB67 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDE6D911861514D00DDFB67 /* HTMLNode.m */; };
 		CFDE6D951861514D00DDFB67 /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDE6D931861514D00DDFB67 /* HTMLParser.m */; };
 		CFDE6D971861540F00DDFB67 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDE6D961861540F00DDFB67 /* libxml2.dylib */; };
@@ -41,6 +42,8 @@
 /* Begin PBXFileReference section */
 		CF05AC2D18568F150026988C /* NGHTMLGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGHTMLGetter.h; sourceTree = "<group>"; };
 		CF05AC2E18568F150026988C /* NGHTMLGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGHTMLGetter.m; sourceTree = "<group>"; };
+		CFA49B0C188A348700355F0E /* UIAsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAsyncImageView.h; sourceTree = "<group>"; };
+		CFA49B0D188A348700355F0E /* UIAsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAsyncImageView.m; sourceTree = "<group>"; };
 		CFDE6D901861514D00DDFB67 /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
 		CFDE6D911861514D00DDFB67 /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLNode.m; sourceTree = "<group>"; };
 		CFDE6D921861514D00DDFB67 /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				CFEFED0A18568CF900A5AC7C /* Supporting Files */,
 				CF05AC2D18568F150026988C /* NGHTMLGetter.h */,
 				CF05AC2E18568F150026988C /* NGHTMLGetter.m */,
+				CFA49B0C188A348700355F0E /* UIAsyncImageView.h */,
+				CFA49B0D188A348700355F0E /* UIAsyncImageView.m */,
 			);
 			path = NGV;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFA49B0E188A348700355F0E /* UIAsyncImageView.m in Sources */,
 				CFDE6D941861514D00DDFB67 /* HTMLNode.m in Sources */,
 				CFDE6D951861514D00DDFB67 /* HTMLParser.m in Sources */,
 				CFEFED1D18568CF900A5AC7C /* NGViewController.m in Sources */,
