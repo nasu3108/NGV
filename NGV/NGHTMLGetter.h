@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @protocol NGHTMLGetterDelegate<NSObject>
--(void)didFinishedLoad:(NSArray*)html;
+-(void)didFinishedLoad:(NSArray*)images;
 @end
 
-@interface NGHTMLGetter : NSObject<NGHTMLGetterDelegate>{
+@interface NGHTMLGetter : NSObject{
     NSMutableData *receivedData;
     
 }
