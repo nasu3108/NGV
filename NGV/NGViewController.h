@@ -12,5 +12,9 @@
 @interface NGViewController : UIViewController<NGHTMLGetterDelegate, UICollectionViewDataSource, UICollectionViewDelegate>{
     IBOutlet UICollectionView *image_collection_view;
     NSMutableArray *imageUrlArray;
+    NSString *sourceHtmlUrl;
 }
+
+- (void)setSourceHtmlUrl:(NSString *)url;
+- (void)getImage;
 @end

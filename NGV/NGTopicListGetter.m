@@ -54,6 +54,8 @@
     
     NSLog(@"%@",odaimokuArray);
     
+    [self deleteReturnInOdaimokuArray];
+    
     // デリゲート先がちゃんと「didFinishedLoad」というメソッドを持っているか?
     if ([self.delegate respondsToSelector:@selector(didFinishedLoad:)]) {
         [self.delegate didFinishedLoad:odaimokuArray];
@@ -61,6 +63,21 @@
     }
     return;
 }
+
+-(void)deleteReturnInOdaimokuArray
+{
+    NSMutableArray *newOdaimokuArray = [NSMutableArray array];
+    for (int i = 0; i < [odaimokuArray count] ; i++) {
+        NSMutableDictionary *dic = [odaimokuArray objectAtIndex:i];
+        NSString *link = [[dic objectForKey:@"link"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString *title = [[dic objectForKey:@"title"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [dic setObject:link forKey:@"link"];
+        [dic setObject:title forKey:@"title"];
+        [newOdaimokuArray addObject:dic];
+    }
+    odaimokuArray = newOdaimokuArray;
+}
+
 
 -(void) parser:(NSXMLParser *) parser
 didStartElement:(NSString *) elementName

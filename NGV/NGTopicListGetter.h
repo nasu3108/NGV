@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol NGTopicListGetterDelegate<NSObject>
--(void)didFinishedLoad:(NSArray*)html;
+-(void)didFinishedLoad:(NSArray*)links;
 @end
 
 @interface NGTopicListGetter: NSObject<NSXMLParserDelegate> {

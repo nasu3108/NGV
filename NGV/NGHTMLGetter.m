@@ -12,10 +12,10 @@
 @implementation NGHTMLGetter
 @synthesize delegate;
 
-- (BOOL)getImage{
+- (BOOL)getImage:(NSString *)sourceHtmlUrl{
     //http://www.yoheim.net/blog.php?q=20120606
     // 送信したいURLを作成する
-    NSURL *url = [NSURL URLWithString:@"http://matome.naver.jp/odai/2135478736309706801"];
+    NSURL *url = [NSURL URLWithString:sourceHtmlUrl];
     // Mutableなインスタンスを作成し、インスタンスの内容を変更できるようにする
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
     // MethodにPOSTを指定する。
@@ -50,6 +50,7 @@
     HTMLParser *parser = [[HTMLParser alloc] initWithString:html error:&error];
     
     HTMLNode *bodyNode = [parser body];
+    
     
     NSArray *nodeImages = [bodyNode findChildTags:@"img"];//imgタグの物を全部とってくる
     NSMutableArray *imageUrls = [NSMutableArray array];

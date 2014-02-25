@@ -16,6 +16,6 @@
     NSMutableData *receivedData;
     
 }
-- (BOOL)getImage;
+- (BOOL)getImage:(NSString *)sourceHtmlUrl;
 @property (nonatomic, assign) id<NGHTMLGetterDelegate> delegate;
 @end
