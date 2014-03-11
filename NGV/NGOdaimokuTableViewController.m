@@ -49,13 +49,25 @@
     [self getTopic];
 }
 
-
-
 -(void)didFinishedLoad:(NSArray *)links
 {
     odaimokuUrlArray = [links mutableCopy];
     [odaimoku_table_view reloadData];
     // 更新が完了したら 引っ張って更新のあれ 止めてあげる
+    [self.refreshControl endRefreshing];
+}
+
+-(void)didConnectionFailed
+{
+    // アラートダイアログ表示
+    [[[UIAlertView alloc]
+      initWithTitle:@"接続失敗"
+      message:@"接続に失敗しました"
+      delegate:nil
+      cancelButtonTitle:nil
+      otherButtonTitles:@"OK", nil
+      ] show];
+    // 接続に失敗した場合も 引っ張って更新のあれ 止めてあげる
     [self.refreshControl endRefreshing];
 }
 

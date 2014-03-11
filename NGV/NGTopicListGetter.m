@@ -64,6 +64,20 @@
     return;
 }
 
+// 通信失敗
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError : %@ %@",
+          [error localizedDescription],
+          [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
+    // デリゲート先がちゃんと「didConnectionFailed」というメソッドを持っているか?
+    if ([self.delegate respondsToSelector:@selector(didConnectionFailed)]) {
+        [self.delegate didConnectionFailed];
+        return;
+    }
+    return;
+}
+
 -(void)deleteReturnInOdaimokuArray
 {
     NSMutableArray *newOdaimokuArray = [NSMutableArray array];

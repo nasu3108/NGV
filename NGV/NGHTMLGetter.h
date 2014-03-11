@@ -10,6 +10,7 @@
 
 @protocol NGHTMLGetterDelegate<NSObject>
 -(void)didFinishedLoad:(NSArray*)images;
+-(void)didConnectionFailed;
 @end
 
 @interface NGHTMLGetter : NSObject{

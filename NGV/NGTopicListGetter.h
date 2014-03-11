@@ -10,6 +10,7 @@
 
 @protocol NGTopicListGetterDelegate<NSObject>
 -(void)didFinishedLoad:(NSArray*)links;
+-(void)didConnectionFailed;
 @end
 
 @interface NGTopicListGetter: NSObject<NSXMLParserDelegate> {

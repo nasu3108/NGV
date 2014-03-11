@@ -76,6 +76,20 @@
     [self stopRefreshControl];
 }
 
+-(void)didConnectionFailed
+{
+    // アラートダイアログ表示
+    [[[UIAlertView alloc]
+     initWithTitle:@"接続失敗"
+     message:@"接続に失敗しました"
+     delegate:nil
+     cancelButtonTitle:nil
+     otherButtonTitles:@"OK", nil
+     ] show];
+    // 接続に失敗した場合も 引っ張って更新のあれ 止めてあげる
+    [self stopRefreshControl];
+}
+
 - (void)stopRefreshControl
 {
     NSArray *subviewArray = [image_collection_view subviews];
