@@ -69,11 +69,23 @@
 
 - (void)didFinishedLoad:(NSArray *)images
 {
-    imageUrlArray = [images mutableCopy];
+    //imageUrlArray = [images mutableCopy];
+    [self copyImageUrlArray:images];
     [image_collection_view reloadData];
     
     // 更新が完了したら 引っ張って更新のあれ 止めてあげる
     [self stopRefreshControl];
+}
+
+- (void)copyImageUrlArray:(NSArray *)images
+{
+    imageUrlArray =[NSMutableArray array];
+    for (int i = 0; i < [images count]; i++) {
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        [dic setObject:@YES forKey:@"check"];
+        [dic setObject:[images objectAtIndex:i] forKey:@"contents"];
+        [imageUrlArray addObject:dic];
+    }
 }
 
 -(void)didConnectionFailed
@@ -116,7 +128,7 @@
 }
 
 //Method to create cell at index path
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     UICollectionViewCell *cell;
     
@@ -126,18 +138,38 @@
         //cell.backgroundColor = [UIColor greenColor];
         
         UIAsyncImageView *imageView = (UIAsyncImageView *)[cell viewWithTag:1];
-        [imageView loadImage:[imageUrlArray objectAtIndex:indexPath.row]];
+        [self setCheck:cell cellForItemAtIndexPath:indexPath];
+        [imageView loadImage:[[imageUrlArray objectAtIndex:indexPath.row] objectForKey:@"contents"]];
         //CGRect rect = CGRectMake(0, height, self.view.frame.size.width, self.view.frame.size.height);
     }
     
     return cell;
 }
 
+- (void)setCheck:(UICollectionViewCell *)cell cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIImageView *check = (UIImageView *)[cell viewWithTag:2];
+    check.hidden = [[[imageUrlArray objectAtIndex:indexPath.row] objectForKey:@"check"] isEqualToNumber:@NO];
+}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    //クリックされたらよばれる
-    NSLog(@"Clicked %d-%d",indexPath.section,indexPath.row);
+    UICollectionViewCell *cell;
+    
+    if(indexPath.section==0){//セクション0のセル
+        //クリックされたらよばれる
+        NSLog(@"Clicked %d-%d",indexPath.section,indexPath.row);
+        NSMutableDictionary *dic = [imageUrlArray objectAtIndex:indexPath.row];
+        NSNumber *check = [NSNumber numberWithBool:[[dic objectForKey:@"check"] isEqualToNumber:@NO]];
+        [dic setObject:check forKey:@"check"];
+        [imageUrlArray replaceObjectAtIndex:indexPath.row withObject:dic];
+        
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell1" forIndexPath:indexPath];
+        
+        [self setCheck:cell cellForItemAtIndexPath:indexPath];
+
+        [collectionView reloadItemsAtIndexPaths:@[indexPath]];
+    }
 }
 
 @end
