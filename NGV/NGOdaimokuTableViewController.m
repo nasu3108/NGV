@@ -49,7 +49,7 @@
     [self getTopic];
 }
 
--(void)didFinishedLoad:(NSArray *)links
+-(void)NGTopicListGetterDelegateDidFinishedLoad:(NSArray *)links
 {
     odaimokuUrlArray = [links mutableCopy];
     [odaimoku_table_view reloadData];
@@ -57,7 +57,7 @@
     [self.refreshControl endRefreshing];
 }
 
--(void)didConnectionFailed
+-(void)NGTopicListGetterDelegateDidConnectionFailed
 {
     // アラートダイアログ表示
     [[[UIAlertView alloc]

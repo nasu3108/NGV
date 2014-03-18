@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		CF05AC2F18568F150026988C /* NGHTMLGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = CF05AC2E18568F150026988C /* NGHTMLGetter.m */; };
+		CF07D31118D88E55007BAAFC /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CF07D30E18D88E55007BAAFC /* SVProgressHUD.bundle */; };
+		CF07D31218D88E55007BAAFC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CF07D31018D88E55007BAAFC /* SVProgressHUD.m */; };
+		CF07D31418D88E8D007BAAFC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF07D31318D88E8D007BAAFC /* QuartzCore.framework */; };
 		CF1374DD1897275900C757B0 /* OK.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1374DC1897275900C757B0 /* OK.png */; };
 		CF1374E018972A2E00C757B0 /* NGOdaimokuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1374DF18972A2E00C757B0 /* NGOdaimokuTableViewController.m */; };
 		CF1374E318972C2B00C757B0 /* NGTopicListGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1374E218972C2B00C757B0 /* NGTopicListGetter.m */; };
 		CFA49B0E188A348700355F0E /* UIAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA49B0D188A348700355F0E /* UIAsyncImageView.m */; };
+		CFD6E83618D7C17500CBA020 /* NGImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD6E83518D7C17500CBA020 /* NGImageDownloader.m */; };
 		CFDE6D941861514D00DDFB67 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDE6D911861514D00DDFB67 /* HTMLNode.m */; };
 		CFDE6D951861514D00DDFB67 /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDE6D931861514D00DDFB67 /* HTMLParser.m */; };
 		CFDE6D971861540F00DDFB67 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDE6D961861540F00DDFB67 /* libxml2.dylib */; };
@@ -45,6 +49,10 @@
 /* Begin PBXFileReference section */
 		CF05AC2D18568F150026988C /* NGHTMLGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGHTMLGetter.h; sourceTree = "<group>"; };
 		CF05AC2E18568F150026988C /* NGHTMLGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGHTMLGetter.m; sourceTree = "<group>"; };
+		CF07D30E18D88E55007BAAFC /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		CF07D30F18D88E55007BAAFC /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		CF07D31018D88E55007BAAFC /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		CF07D31318D88E8D007BAAFC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CF1374DC1897275900C757B0 /* OK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OK.png; sourceTree = "<group>"; };
 		CF1374DE18972A2E00C757B0 /* NGOdaimokuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGOdaimokuTableViewController.h; sourceTree = "<group>"; };
 		CF1374DF18972A2E00C757B0 /* NGOdaimokuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGOdaimokuTableViewController.m; sourceTree = "<group>"; };
@@ -52,6 +60,8 @@
 		CF1374E218972C2B00C757B0 /* NGTopicListGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGTopicListGetter.m; sourceTree = "<group>"; };
 		CFA49B0C188A348700355F0E /* UIAsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAsyncImageView.h; sourceTree = "<group>"; };
 		CFA49B0D188A348700355F0E /* UIAsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAsyncImageView.m; sourceTree = "<group>"; };
+		CFD6E83418D7C17500CBA020 /* NGImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGImageDownloader.h; sourceTree = "<group>"; };
+		CFD6E83518D7C17500CBA020 /* NGImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGImageDownloader.m; sourceTree = "<group>"; };
 		CFDE6D901861514D00DDFB67 /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
 		CFDE6D911861514D00DDFB67 /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLNode.m; sourceTree = "<group>"; };
 		CFDE6D921861514D00DDFB67 /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
@@ -84,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF07D31418D88E8D007BAAFC /* QuartzCore.framework in Frameworks */,
 				CFDE6D971861540F00DDFB67 /* libxml2.dylib in Frameworks */,
 				CFEFED0618568CF900A5AC7C /* CoreGraphics.framework in Frameworks */,
 				CFEFED0818568CF900A5AC7C /* UIKit.framework in Frameworks */,
@@ -104,6 +115,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF07D30D18D88E10007BAAFC /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				CF07D30E18D88E55007BAAFC /* SVProgressHUD.bundle */,
+				CF07D30F18D88E55007BAAFC /* SVProgressHUD.h */,
+				CF07D31018D88E55007BAAFC /* SVProgressHUD.m */,
+			);
+			name = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		CF1374DA1897271800C757B0 /* resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +174,7 @@
 		CFEFED0218568CF900A5AC7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF07D31318D88E8D007BAAFC /* QuartzCore.framework */,
 				CFDE6D961861540F00DDFB67 /* libxml2.dylib */,
 				CFEFED0318568CF900A5AC7C /* Foundation.framework */,
 				CFEFED0518568CF900A5AC7C /* CoreGraphics.framework */,
@@ -165,6 +187,7 @@
 		CFEFED0918568CF900A5AC7C /* NGV */ = {
 			isa = PBXGroup;
 			children = (
+				CF07D30D18D88E10007BAAFC /* SVProgressHUD */,
 				CFDE6D8F1861504D00DDFB67 /* HTML-Parser */,
 				CFEFED1218568CF900A5AC7C /* NGAppDelegate.h */,
 				CF1374DA1897271800C757B0 /* resources */,
@@ -183,6 +206,8 @@
 				CFA49B0D188A348700355F0E /* UIAsyncImageView.m */,
 				CF1374E118972C2B00C757B0 /* NGTopicListGetter.h */,
 				CF1374E218972C2B00C757B0 /* NGTopicListGetter.m */,
+				CFD6E83418D7C17500CBA020 /* NGImageDownloader.h */,
+				CFD6E83518D7C17500CBA020 /* NGImageDownloader.m */,
 			);
 			path = NGV;
 			sourceTree = "<group>";
@@ -297,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF1374DD1897275900C757B0 /* OK.png in Resources */,
+				CF07D31118D88E55007BAAFC /* SVProgressHUD.bundle in Resources */,
 				CFEFED1A18568CF900A5AC7C /* Main_iPad.storyboard in Resources */,
 				CFEFED1F18568CF900A5AC7C /* Images.xcassets in Resources */,
 				CFEFED1718568CF900A5AC7C /* Main_iPhone.storyboard in Resources */,
@@ -326,7 +352,9 @@
 				CF1374E318972C2B00C757B0 /* NGTopicListGetter.m in Sources */,
 				CF05AC2F18568F150026988C /* NGHTMLGetter.m in Sources */,
 				CFEFED1018568CF900A5AC7C /* main.m in Sources */,
+				CFD6E83618D7C17500CBA020 /* NGImageDownloader.m in Sources */,
 				CFEFED1418568CF900A5AC7C /* NGAppDelegate.m in Sources */,
+				CF07D31218D88E55007BAAFC /* SVProgressHUD.m in Sources */,
 				CF1374E018972A2E00C757B0 /* NGOdaimokuTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

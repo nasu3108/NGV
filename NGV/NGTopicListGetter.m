@@ -57,8 +57,8 @@
     [self deleteReturnInOdaimokuArray];
     
     // デリゲート先がちゃんと「didFinishedLoad」というメソッドを持っているか?
-    if ([self.delegate respondsToSelector:@selector(didFinishedLoad:)]) {
-        [self.delegate didFinishedLoad:odaimokuArray];
+    if ([self.delegate respondsToSelector:@selector(NGTopicListGetterDelegateDidFinishedLoad:)]) {
+        [self.delegate NGTopicListGetterDelegateDidFinishedLoad:odaimokuArray];
         return;
     }
     return;
@@ -71,8 +71,8 @@
           [error localizedDescription],
           [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
     // デリゲート先がちゃんと「didConnectionFailed」というメソッドを持っているか?
-    if ([self.delegate respondsToSelector:@selector(didConnectionFailed)]) {
-        [self.delegate didConnectionFailed];
+    if ([self.delegate respondsToSelector:@selector(NGTopicListGetterDelegateDidConnectionFailed)]) {
+        [self.delegate NGTopicListGetterDelegateDidConnectionFailed];
         return;
     }
     return;

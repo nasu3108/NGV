@@ -8,6 +8,8 @@
 
 #import "NGViewController.h"
 #import "UIAsyncImageView.h"
+#import "NGImageDownloader.h"
+#import "SVProgressHUD.h"
 
 @implementation NGViewController
 
@@ -67,7 +69,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)didFinishedLoad:(NSArray *)images
+- (void)NGHTMLGetterDelegateDidFinishedLoad:(NSArray *)images
 {
     //imageUrlArray = [images mutableCopy];
     [self copyImageUrlArray:images];
@@ -88,7 +90,7 @@
     }
 }
 
--(void)didConnectionFailed
+-(void)NGHTMLGetterDelegateDidConnectionFailed
 {
     // アラートダイアログ表示
     [[[UIAlertView alloc]
@@ -170,6 +172,24 @@
 
         [collectionView reloadItemsAtIndexPaths:@[indexPath]];
     }
+}
+
+- (IBAction)downloadImages:(id)sender{
+    
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
+    NGImageDownloader *loader = [NGImageDownloader alloc ];
+    loader.delegate = self;
+    [[loader initWithAsyncImageArray:imageUrlArray] imageDownload];
+}
+
+-(void)NGImageDownloaderDelegateDidFinishedLoad{
+    //[SVProgressHUD dismiss];
+    [SVProgressHUD showSuccessWithStatus:@"保存完了！"];
+}
+
+-(void)NGImageDownloaderDelegateDidConnectionFailed:(NSError*)error{
+    //[SVProgressHUD dismiss];
+    [SVProgressHUD showSuccessWithStatus:@"保存失敗..."];
 }
 
 @end

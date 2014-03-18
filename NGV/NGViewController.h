@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "NGHTMLGetter.h"
+#import "NGImageDownloader.h"
 
-@interface NGViewController : UIViewController<NGHTMLGetterDelegate, UICollectionViewDataSource, UICollectionViewDelegate>{
+@interface NGViewController : UIViewController<NGHTMLGetterDelegate, UICollectionViewDataSource, UICollectionViewDelegate,NGImageDownloaderDelegate>{
     IBOutlet UICollectionView *image_collection_view;
     NSMutableArray *imageUrlArray;
     NSString *sourceHtmlUrl;
 }
 
+- (IBAction)downloadImages:(id)sender;
 - (void)setSourceHtmlUrl:(NSString *)url;
 - (void)getImage;
 @end

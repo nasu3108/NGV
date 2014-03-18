@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @protocol NGHTMLGetterDelegate<NSObject>
--(void)didFinishedLoad:(NSArray*)images;
--(void)didConnectionFailed;
+-(void)NGHTMLGetterDelegateDidFinishedLoad:(NSArray*)images;
+-(void)NGHTMLGetterDelegateDidConnectionFailed;
 @end
 
 @interface NGHTMLGetter : NSObject{

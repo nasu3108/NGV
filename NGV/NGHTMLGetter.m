@@ -63,8 +63,8 @@
     NSLog(@"%@",imageUrls);
     
     // デリゲート先がちゃんと「didFinishedLoad」というメソッドを持っているか?
-    if ([self.delegate respondsToSelector:@selector(didFinishedLoad:)]) {
-        [self.delegate didFinishedLoad:imageUrls];
+    if ([self.delegate respondsToSelector:@selector(NGHTMLGetterDelegateDidFinishedLoad:)]) {
+        [self.delegate NGHTMLGetterDelegateDidFinishedLoad:imageUrls];
         if (error) {
             NSLog(@"Error: %@", error);
             return;
@@ -81,8 +81,8 @@
           [error localizedDescription],
           [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
     // デリゲート先がちゃんと「didConnectionFailed」というメソッドを持っているか?
-    if ([self.delegate respondsToSelector:@selector(didConnectionFailed)]) {
-        [self.delegate didConnectionFailed];
+    if ([self.delegate respondsToSelector:@selector(NGHTMLGetterDelegateDidConnectionFailed)]) {
+        [self.delegate NGHTMLGetterDelegateDidConnectionFailed];
         return;
     }
     return;

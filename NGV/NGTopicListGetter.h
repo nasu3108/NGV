@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @protocol NGTopicListGetterDelegate<NSObject>
--(void)didFinishedLoad:(NSArray*)links;
--(void)didConnectionFailed;
+-(void)NGTopicListGetterDelegateDidFinishedLoad:(NSArray*)links;
+-(void)NGTopicListGetterDelegateDidConnectionFailed;
 @end
 
 @interface NGTopicListGetter: NSObject<NSXMLParserDelegate> {
