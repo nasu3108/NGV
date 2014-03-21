@@ -135,13 +135,12 @@
     UICollectionViewCell *cell;
     
     if(indexPath.section==0){//セクション0のセル
-        
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell1" forIndexPath:indexPath];
         //cell.backgroundColor = [UIColor greenColor];
         
         UIAsyncImageView *imageView = (UIAsyncImageView *)[cell viewWithTag:1];
         [self setCheck:cell cellForItemAtIndexPath:indexPath];
-        [imageView loadImage:[[imageUrlArray objectAtIndex:indexPath.row] objectForKey:@"contents"]];
+        [imageView loadImage:[[imageUrlArray objectAtIndex:indexPath.row] objectForKey:@"contents"] forceReload:TRUE];
         //CGRect rect = CGRectMake(0, height, self.view.frame.size.width, self.view.frame.size.height);
     }
     

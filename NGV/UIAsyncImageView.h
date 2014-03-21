@@ -15,7 +15,10 @@
     NSMutableData *data;
 }
 
+- (void)loadImage:(NSString *)url forceReload:(BOOL)boolean;
 - (void)loadImage:(NSString *)url;
 - (void)abort;
+
+@property NSString *url;
 
 @end

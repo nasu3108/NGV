@@ -10,8 +10,22 @@
 
 @implementation UIAsyncImageView
 
+-(void)loadImage:(NSString *)url forceReload:(BOOL)boolean
+{
+    if (boolean) {
+        self.url = nil;
+    }
+    [self loadImage:url];
+}
+
 -(void)loadImage:(NSString *)url{
+    if ([self.url isEqualToString:url]) {
+        //すでに url 取り込んでいる場合は再読み込みしない
+        return;
+    }
+    self.url = url;
     [self abort];
+    self.image = nil;
     self.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.2];
     data = [[NSMutableData alloc] initWithCapacity:0];
     
