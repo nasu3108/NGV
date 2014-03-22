@@ -7,6 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIAsyncImageView.h"
+
+@protocol UIAsyncImageViewDelegate<NSObject>
+-(void)UIAsyncImageViewDelegateDidFinishedLoad:(UIImage *)image url:(NSString *)url;
+@end
 
 @interface UIAsyncImageView : UIImageView
 {
@@ -21,4 +26,6 @@
 
 @property NSString *url;
 
+@property (nonatomic, assign) id<UIAsyncImageViewDelegate> delegate;
 @end
+

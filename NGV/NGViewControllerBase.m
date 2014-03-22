@@ -60,11 +60,13 @@
 - (void)copyImageUrlArray:(NSArray *)images
 {
     imageUrlArray =[NSMutableArray array];
+    imageArray = [NSMutableArray array];
     for (int i = 0; i < [images count]; i++) {
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];
         [dic setObject:@YES forKey:@"check"];
         [dic setObject:[images objectAtIndex:i] forKey:@"contents"];
         [imageUrlArray addObject:dic];
+        [imageArray addObject:[NSNull null]];
     }
 }
 
@@ -118,11 +120,32 @@
         
         UIAsyncImageView *imageView = (UIAsyncImageView *)[cell viewWithTag:1];
         [self setCheck:cell cellForItemAtIndexPath:indexPath];
-        [imageView loadImage:[[imageUrlArray objectAtIndex:indexPath.row] objectForKey:@"contents"] forceReload:TRUE];
-        //CGRect rect = CGRectMake(0, height, self.view.frame.size.width, self.view.frame.size.height);
+        if ([[imageArray objectAtIndex:indexPath.row] isKindOfClass:[UIImage class]]) {
+            imageView.image = [imageArray objectAtIndex:indexPath.row];
+        } else {
+            [imageView setDelegate:self];
+            [imageView loadImage:[[imageUrlArray objectAtIndex:indexPath.row] objectForKey:@"contents"] forceReload:TRUE];
+        }
     }
     
     return cell;
+}
+
+-(void)UIAsyncImageViewDelegateDidFinishedLoad:(UIImage *)image url:(NSString *)url
+{
+    NSInteger index = -1;
+    NSInteger i = 0;
+    for (NSDictionary *dic in imageUrlArray) {
+        if(![[dic objectForKey:@"contents"] isEqual:url]){
+            i++;
+        }else{
+            index = i;
+            break;
+        }
+    }
+    if (index >= 0) {
+        [imageArray replaceObjectAtIndex:index withObject:image];
+    }
 }
 
 - (void)setCheck:(UICollectionViewCell *)cell cellForItemAtIndexPath:(NSIndexPath *)indexPath

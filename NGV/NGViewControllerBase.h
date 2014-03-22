@@ -10,8 +10,9 @@
 #import "NGHTMLGetter.h"
 #import "NGImageDownloader.h"
 
-@interface NGViewControllerBase : NSObject<NGHTMLGetterDelegate, UICollectionViewDataSource, UICollectionViewDelegate,NGImageDownloaderDelegate>{
+@interface NGViewControllerBase : NSObject<NGHTMLGetterDelegate, UICollectionViewDataSource, UICollectionViewDelegate,NGImageDownloaderDelegate,UIAsyncImageViewDelegate>{
     NSMutableArray *imageUrlArray;
+    NSMutableArray *imageArray;
     NSString *sourceHtmlUrl;
 }
 

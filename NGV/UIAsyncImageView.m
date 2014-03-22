@@ -9,6 +9,7 @@
 #import "UIAsyncImageView.h"
 
 @implementation UIAsyncImageView
+@synthesize delegate;
 
 -(void)loadImage:(NSString *)url forceReload:(BOOL)boolean
 {
@@ -50,6 +51,10 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection{
     self.image = [UIImage imageWithData:data];
+    if ([self.delegate respondsToSelector:@selector(UIAsyncImageViewDelegateDidFinishedLoad: url:)]) {
+        [self.delegate UIAsyncImageViewDelegateDidFinishedLoad:self.image url:self.url];
+        return;
+    }
     self.contentMode = UIViewContentModeScaleAspectFit;
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self abort];
