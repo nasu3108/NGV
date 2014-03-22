@@ -9,17 +9,7 @@
 #import "NGOdaimokuTableViewController.h"
 #import "NGViewController.h"
 
-
 @implementation NGOdaimokuTableViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        odaimokuUrlArray = [NSMutableArray array];
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -27,7 +17,7 @@
     
     // 引っ張って更新のあれ
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    self.refreshControl = refreshControl;
+    [odaimoku_table_view addSubview:refreshControl];
     
     [refreshControl addTarget:self action:@selector(refreshOccured:) forControlEvents:UIControlEventValueChanged];
     
@@ -54,7 +44,18 @@
     odaimokuUrlArray = [links mutableCopy];
     [odaimoku_table_view reloadData];
     // 更新が完了したら 引っ張って更新のあれ 止めてあげる
-    [self.refreshControl endRefreshing];
+    [self stopRefreshControl];
+}
+
+- (void)stopRefreshControl
+{
+    NSArray *subviewArray = [odaimoku_table_view subviews];
+    for (long i = [subviewArray count] - 1; i >= 0; i--) {
+        if([[subviewArray objectAtIndex:i] isMemberOfClass:[UIRefreshControl class]]){
+            [[subviewArray objectAtIndex:i] endRefreshing];
+            return;
+        }
+    }
 }
 
 -(void)NGTopicListGetterDelegateDidConnectionFailed
@@ -68,7 +69,7 @@
       otherButtonTitles:@"OK", nil
       ] show];
     // 接続に失敗した場合も 引っ張って更新のあれ 止めてあげる
-    [self.refreshControl endRefreshing];
+    [self stopRefreshControl];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -101,6 +102,7 @@
     
     if(controller) {
         NSLog(@"%@",[[odaimokuUrlArray objectAtIndex:indexPath.row] objectForKey:@"link"]);
+        [controller variableInit];
         [controller setSourceHtmlUrl:[[odaimokuUrlArray objectAtIndex:indexPath.row] objectForKey:@"link"]];
         [controller getImage];
         [self.navigationController pushViewController:controller animated:YES];

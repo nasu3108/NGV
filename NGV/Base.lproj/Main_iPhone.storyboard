@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Odaimoku Table View Controller-->
+        <!--Odaimoku Table View Controller Iphone - Naver まとめ 「美人」カテゴリ一覧-->
         <scene sceneID="hE4-lB-Z8Z">
             <objects>
-                <tableViewController id="VfA-6u-3wg" customClass="NGOdaimokuTableViewController" sceneMemberID="viewController">
+                <tableViewController id="VfA-6u-3wg" customClass="NGOdaimokuTableViewControllerIphone" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" id="zU4-yh-UoT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
                             <outlet property="delegate" destination="VfA-6u-3wg" id="qgJ-0R-Za4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="u7X-5V-kRL"/>
+                    <navigationItem key="navigationItem" title="Naver まとめ 「美人」カテゴリ一覧" id="u7X-5V-kRL"/>
                     <connections>
                         <outlet property="odaimoku_table_view" destination="zU4-yh-UoT" id="WoX-r6-Vgn"/>
                     </connections>
@@ -105,7 +105,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="leE-ZP-oks"/>
                     <connections>
-                        <outlet property="image_collection_view" destination="MWQ-6M-EPm" id="WKL-Zl-ndS"/>
+                        <outlet property="image_collection_view" destination="MWQ-6M-EPm" id="Pwd-wr-lnD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
