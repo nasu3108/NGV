@@ -20,7 +20,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="298" translatesAutoresizingMaskIntoConstraints="NO" id="w6H-Jy-lnr">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="298" translatesAutoresizingMaskIntoConstraints="NO" id="w6H-Jy-lnr">
                                             <rect key="frame" x="11" y="5" width="298" height="52"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -28,6 +28,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="w6H-Jy-lnr" firstAttribute="leading" secondItem="HOe-Mr-Mjl" secondAttribute="leading" constant="11" id="0ml-uT-a2B"/>
+                                        <constraint firstAttribute="trailing" secondItem="w6H-Jy-lnr" secondAttribute="trailing" constant="11" id="cPQ-6g-9HW"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -57,7 +61,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MWQ-6M-EPm">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MWQ-6M-EPm">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="532"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KZu-rE-Rho">
@@ -88,11 +92,11 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OT3-sd-7tP">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OT3-sd-7tP">
                                 <rect key="frame" x="0.0" y="532" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem width="219" style="plain" systemItem="fixedSpace" id="PrM-dn-3Kp"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="X0R-JI-6c9"/>
                                     <barButtonItem title="download" id="dLc-X4-ihf">
                                         <connections>
                                             <action selector="downloadImages:" destination="vXZ-lx-hvc" id="rQd-e1-DCJ"/>
@@ -102,6 +106,15 @@
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="OT3-sd-7tP" secondAttribute="trailing" id="Zdj-Nw-WRI"/>
+                            <constraint firstItem="MWQ-6M-EPm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="jEv-Sr-s6C"/>
+                            <constraint firstItem="MWQ-6M-EPm" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="jW1-0a-joq"/>
+                            <constraint firstItem="OT3-sd-7tP" firstAttribute="top" secondItem="MWQ-6M-EPm" secondAttribute="bottom" id="kSM-9w-XuD"/>
+                            <constraint firstAttribute="trailing" secondItem="MWQ-6M-EPm" secondAttribute="trailing" id="laV-cI-wke"/>
+                            <constraint firstAttribute="bottom" secondItem="OT3-sd-7tP" secondAttribute="bottom" id="p49-7b-HFP"/>
+                            <constraint firstItem="OT3-sd-7tP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="xL0-hh-wm8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="leE-ZP-oks"/>
                     <connections>
