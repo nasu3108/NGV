@@ -20,8 +20,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="298" translatesAutoresizingMaskIntoConstraints="NO" id="w6H-Jy-lnr">
-                                            <rect key="frame" x="11" y="5" width="298" height="52"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="298" translatesAutoresizingMaskIntoConstraints="NO" id="w6H-Jy-lnr">
+                                            <rect key="frame" x="11" y="5" width="298" height="47"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -29,8 +29,10 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="w6H-Jy-lnr" firstAttribute="leading" secondItem="HOe-Mr-Mjl" secondAttribute="leading" constant="11" id="0ml-uT-a2B"/>
-                                        <constraint firstAttribute="trailing" secondItem="w6H-Jy-lnr" secondAttribute="trailing" constant="11" id="cPQ-6g-9HW"/>
+                                        <constraint firstItem="w6H-Jy-lnr" firstAttribute="leading" secondItem="HOe-Mr-Mjl" secondAttribute="leading" constant="11" id="8lg-RD-zWP"/>
+                                        <constraint firstItem="w6H-Jy-lnr" firstAttribute="top" secondItem="HOe-Mr-Mjl" secondAttribute="top" constant="5" id="gw0-X6-Kjg"/>
+                                        <constraint firstItem="w6H-Jy-lnr" firstAttribute="centerX" secondItem="HOe-Mr-Mjl" secondAttribute="centerX" id="hAk-5H-T1h"/>
+                                        <constraint firstAttribute="bottom" secondItem="w6H-Jy-lnr" secondAttribute="bottom" constant="10" id="t9b-mE-T5a"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -61,8 +63,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MWQ-6M-EPm">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="532"/>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MWQ-6M-EPm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KZu-rE-Rho">
                                     <size key="itemSize" width="98" height="127"/>
@@ -92,8 +94,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OT3-sd-7tP">
-                                <rect key="frame" x="0.0" y="532" width="320" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OT3-sd-7tP">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="X0R-JI-6c9"/>
