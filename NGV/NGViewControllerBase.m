@@ -18,6 +18,7 @@
 {
     imageUrlArray = [NSMutableArray array];
     sourceHtmlUrl = nil;
+    [image_collection_view reloadData];
 }
 
 - (void)setSourceHtmlUrl:(NSString *)url
@@ -117,7 +118,8 @@
     if(indexPath.section==0){//セクション0のセル
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell1" forIndexPath:indexPath];
         //cell.backgroundColor = [UIColor greenColor];
-        
+        NSLog(@"%d",indexPath.row);
+        NSLog(@"%@",[[imageUrlArray objectAtIndex:indexPath.row] objectForKey:@"contents"]);
         UIAsyncImageView *imageView = (UIAsyncImageView *)[cell viewWithTag:1];
         [self setCheck:cell cellForItemAtIndexPath:indexPath];
         if ([[imageArray objectAtIndex:indexPath.row] isKindOfClass:[UIImage class]]) {
@@ -133,6 +135,11 @@
 
 -(void)UIAsyncImageViewDelegateDidFinishedLoad:(UIImage *)image url:(NSString *)url
 {
+    if (image == nil) {
+        // 原因不明だが、image が nil でこのdelegateにくることがある。
+        // そのため弾かなければSIGABRTで落ちる。
+        return;
+    }
     NSInteger index = -1;
     NSInteger i = 0;
     for (NSDictionary *dic in imageUrlArray) {
@@ -197,6 +204,20 @@
                                  message:@"選択されていません" delegate:nil
                        cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
     [alert show];
+}
+
+-(void)viewWillDisappear
+{
+    @synchronized(self){
+        for (int i = 0; i < [imageUrlArray count]; ++i)
+        {
+            UICollectionViewCell *cell =
+            [image_collection_view cellForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+            UIAsyncImageView *imageView = (UIAsyncImageView *)[cell viewWithTag:1];
+            imageView.delegate = nil;
+        }
+        [self variableInit];
+    }
 }
 
 @end

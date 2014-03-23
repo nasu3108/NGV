@@ -20,6 +20,7 @@
 - (IBAction)downloadImages:(id)sender;
 - (void)setSourceHtmlUrl:(NSString *)url;
 - (void)getImage;
+-(void)viewWillDisappear;
 
 @property IBOutlet UICollectionView *image_collection_view;
 @end

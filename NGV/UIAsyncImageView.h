@@ -26,6 +26,8 @@
 
 @property NSString *url;
 
-@property (nonatomic, assign) id<UIAsyncImageViewDelegate> delegate;
+// weak にしておけばdelegate元がdeallocされてもBAD_ACCESSにならない。
+// 一応ならないのだが、もっといい改善方法があれば検討
+@property (nonatomic, weak) id<UIAsyncImageViewDelegate> delegate;
 @end
 
