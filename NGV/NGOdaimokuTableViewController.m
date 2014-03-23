@@ -101,7 +101,6 @@
     NGViewController  *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"NGViewController1"];
     
     if(controller) {
-        NSLog(@"%@",[[odaimokuUrlArray objectAtIndex:indexPath.row] objectForKey:@"link"]);
         [controller variableInit];
         [controller setSourceHtmlUrl:[[odaimokuUrlArray objectAtIndex:indexPath.row] objectForKey:@"link"]];
         [controller getImage];

@@ -104,7 +104,6 @@
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     if(section==0){
         return [imageUrlArray count];
-        //return 5;
     } else {
         return 0;
     }
@@ -117,9 +116,6 @@
     
     if(indexPath.section==0){//セクション0のセル
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell1" forIndexPath:indexPath];
-        //cell.backgroundColor = [UIColor greenColor];
-        NSLog(@"%d",indexPath.row);
-        NSLog(@"%@",[[imageUrlArray objectAtIndex:indexPath.row] objectForKey:@"contents"]);
         UIAsyncImageView *imageView = (UIAsyncImageView *)[cell viewWithTag:1];
         [self setCheck:cell cellForItemAtIndexPath:indexPath];
         if ([[imageArray objectAtIndex:indexPath.row] isKindOfClass:[UIImage class]]) {
@@ -137,7 +133,7 @@
 {
     if (image == nil) {
         // 原因不明だが、image が nil でこのdelegateにくることがある。
-        // そのため弾かなければSIGABRTで落ちる。
+        // 来ないようにしたが念のため。弾かなければSIGABRTで落ちる。
         return;
     }
     NSInteger index = -1;

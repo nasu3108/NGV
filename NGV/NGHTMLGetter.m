@@ -44,7 +44,6 @@
     = [[NSString alloc] initWithBytes:receivedData.bytes
                                length:receivedData.length
                              encoding:NSUTF8StringEncoding];
-    NSLog(@"%@",html);
     
     NSError *error;
     HTMLParser *parser = [[HTMLParser alloc] initWithString:html error:&error];
@@ -59,8 +58,6 @@
         NSString *url = [imageNode getAttributeNamed:@"src"];
         [imageUrls addObject:url];
     }
-    
-    NSLog(@"%@",imageUrls);
     
     // デリゲート先がちゃんと「didFinishedLoad」というメソッドを持っているか?
     if ([self.delegate respondsToSelector:@selector(NGHTMLGetterDelegateDidFinishedLoad:)]) {

@@ -40,19 +40,12 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection{
-    NSString *xml
-    = [[NSString alloc] initWithBytes:receivedData.bytes
-                               length:receivedData.length
-                             encoding:NSUTF8StringEncoding];
-    NSLog(@"%@",xml);
     odaimokuArray = [NSMutableArray array];
     
     NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithData:receivedData];
     [xmlParser setDelegate: self];
     [xmlParser setShouldResolveExternalEntities:YES];
     [xmlParser parse];
-    
-    NSLog(@"%@",odaimokuArray);
     
     [self deleteReturnInOdaimokuArray];
     

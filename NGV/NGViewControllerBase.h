@@ -16,6 +16,7 @@
     NSString *sourceHtmlUrl;
 }
 
+- (void)refreshOccured:(id)sender;
 - (void)variableInit;
 - (IBAction)downloadImages:(id)sender;
 - (void)setSourceHtmlUrl:(NSString *)url;
