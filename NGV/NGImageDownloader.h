@@ -12,6 +12,7 @@
 @protocol NGImageDownloaderDelegate<NSObject>
 -(void)NGImageDownloaderDelegateDidFinishedLoad;
 -(void)NGImageDownloaderDelegateDidConnectionFailed:(NSError*)error;
+-(void)NGImageDownloaderDelegateNotSelectImage;
 @end
 
 @interface NGImageDownloader: NSObject{

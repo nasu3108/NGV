@@ -26,11 +26,10 @@
 
 - (void)imageDownload{
     if (![self imageDownloadWithArray]) {
-        UIAlertView *alert
-        = [[UIAlertView alloc] initWithTitle:nil
-                                     message:@"選択されていません" delegate:nil
-                           cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-        [alert show];
+        if ([self.delegate respondsToSelector:@selector(NGImageDownloaderDelegateNotSelectImage)]) {
+            [self.delegate NGImageDownloaderDelegateNotSelectImage];
+            return;
+        }
     }
 }
 
@@ -68,17 +67,10 @@
     didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo{
     
     if (error) {
-        
         if ([self.delegate respondsToSelector:@selector(NGImageDownloaderDelegateDidConnectionFailed:)]) {
             [self.delegate NGImageDownloaderDelegateDidConnectionFailed:error];
             return;
         }
-        /*
-        UIAlertView *alert
-        = [[UIAlertView alloc] initWithTitle:nil
-                                     message:@"保存に失敗しました" delegate:nil
-                           cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-        [alert show];*/
         return;
     }
     if (![self imageDownloadWithArray]) {
@@ -88,12 +80,6 @@
             [self.delegate NGImageDownloaderDelegateDidFinishedLoad];
             return;
         }
-        /*
-        UIAlertView *alert
-        = [[UIAlertView alloc] initWithTitle:nil
-                                     message:@"保存しました" delegate:nil
-                           cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-        [alert show];*/
     }
 }
 

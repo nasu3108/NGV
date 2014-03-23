@@ -190,4 +190,13 @@
     [SVProgressHUD showSuccessWithStatus:@"保存失敗..."];
 }
 
+-(void)NGImageDownloaderDelegateNotSelectImage{
+    [SVProgressHUD dismiss];
+    UIAlertView *alert
+    = [[UIAlertView alloc] initWithTitle:nil
+                                 message:@"選択されていません" delegate:nil
+                       cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [alert show];
+}
+
 @end
