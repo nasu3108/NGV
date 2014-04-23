@@ -16,11 +16,8 @@
 
 - (void)variableInit
 {
-    imageUrlArray = [NSMutableArray array];
     sourceHtmlUrl = nil;
-    [image_collection_view reloadData];
-    maxPage = 1;
-    loadPages = 0;
+    [self variableInitExceptSourceHtmlUrl];
 }
 
 - (void)variableInitExceptSourceHtmlUrl
@@ -28,7 +25,7 @@
     imageUrlArray = [NSMutableArray array];
     [image_collection_view reloadData];
     maxPage = 1;
-    loadPages = 0;
+    loadPages = 1;
 }
 
 - (void)setSourceHtmlUrl:(NSString *)url
@@ -69,7 +66,7 @@
 
 - (void)NGHTMLGetterDelegateDidFinishedLoad:(NSArray *)images
 {
-    if(loadPages == 0){
+    if(loadPages == 1){
         [self copyImageUrlArray:images];
         
         // 更新が完了したら 引っ張って更新のあれ 止めてあげる
