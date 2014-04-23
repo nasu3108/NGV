@@ -49,14 +49,39 @@
     HTMLParser *parser = [[HTMLParser alloc] initWithString:html error:&error];
     
     HTMLNode *bodyNode = [parser body];
+    HTMLNode *contentsNode =
+        [bodyNode findChildWithAttribute:@"data-na" matchingName:@"NA:contents" allowPartial:FALSE];
     
-    
-    NSArray *nodeImages = [bodyNode findChildTags:@"img"];//imgタグの物を全部とってくる
+    NSArray *nodeImages = [contentsNode findChildTags:@"img"];//imgタグの物を全部とってくる
     NSMutableArray *imageUrls = [NSMutableArray array];
     
     for(HTMLNode *imageNode in nodeImages) {
         NSString *url = [imageNode getAttributeNamed:@"src"];
         [imageUrls addObject:url];
+    }
+    
+    HTMLNode *pagerNode =
+    [bodyNode findChildWithAttribute:@"data-na" matchingName:@"NA:pager" allowPartial:FALSE];
+    NSArray *pagers = [pagerNode children];
+    
+    NSInteger maxPage = 0;
+    for(HTMLNode *pager in pagers) {
+        if ([[pager children] count] == 0) {
+            continue;
+        }
+        NSString *pagerStr = [[pager firstChild] rawContents];
+        NSInteger page = [pagerStr intValue];
+        if (page > maxPage) {
+            maxPage = page;
+        }
+    }
+    
+    // デリゲート先がちゃんと「didFinishedLoad」というメソッドを持っているか?
+    if ([self.delegate respondsToSelector:@selector(NGHTMLGetterDelegateDidFinishedGetMaxPage:)]) {
+        [self.delegate NGHTMLGetterDelegateDidFinishedGetMaxPage:maxPage];
+        if (error) {
+            NSLog(@"Error: %@", error);
+        }
     }
     
     // デリゲート先がちゃんと「didFinishedLoad」というメソッドを持っているか?

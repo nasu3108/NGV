@@ -19,6 +19,16 @@
     imageUrlArray = [NSMutableArray array];
     sourceHtmlUrl = nil;
     [image_collection_view reloadData];
+    maxPage = 1;
+    loadPages = 0;
+}
+
+- (void)variableInitExceptSourceHtmlUrl
+{
+    imageUrlArray = [NSMutableArray array];
+    [image_collection_view reloadData];
+    maxPage = 1;
+    loadPages = 0;
 }
 
 - (void)setSourceHtmlUrl:(NSString *)url
@@ -30,6 +40,7 @@
 {
     if (sourceHtmlUrl == nil) {
         // sourceHTmlUrl が空だったらなにもしない
+        [self stopRefreshControl];
         return;
     }
     // html 取得
@@ -44,24 +55,70 @@
 
 - (void)refreshOccured:(id)sender {
     // 引っ張って更新のあれ が引っ張られたら呼び出される。
+    [self variableInitExceptSourceHtmlUrl];
     [self getImage];
+}
+
+-(void)NGHTMLGetterDelegateDidFinishedGetMaxPage:(NSInteger)page
+{
+    if (maxPage == 1) {
+        maxPage = page;
+    }
 }
 
 
 - (void)NGHTMLGetterDelegateDidFinishedLoad:(NSArray *)images
 {
-    //imageUrlArray = [images mutableCopy];
-    [self copyImageUrlArray:images];
-    [image_collection_view reloadData];
-    
-    // 更新が完了したら 引っ張って更新のあれ 止めてあげる
-    [self stopRefreshControl];
+    if(loadPages == 0){
+        [self copyImageUrlArray:images];
+        
+        // 更新が完了したら 引っ張って更新のあれ 止めてあげる
+        [self stopRefreshControl];
+    }else{
+        [self addImageUrlArray:images];
+    }
+    loadPages++;
+    if (loadPages <= maxPage) {
+        // 次のページがあれば次のページを読みに行く
+        NSString *nextSourceHtmlUrl = [[sourceHtmlUrl copy] stringByAppendingFormat:@"?page=%ld",(long)loadPages];
+        
+        NGHTMLGetter *htmlListGetter = [NGHTMLGetter alloc];
+        htmlListGetter.delegate = self;
+        [htmlListGetter getImage:nextSourceHtmlUrl];
+    }
+    if (loadPages > maxPage) {
+        // 処理の最後に画面の再読み込みを行う。（必ず一回はここを通る）
+        [image_collection_view reloadData];
+        if ([imageUrlArray count] == 0) {
+            // アラートダイアログ表示
+            [[[UIAlertView alloc]
+              initWithTitle:@"画像が見つかりませんでした"
+              message:@"このお題目には画像がありません。"
+              delegate:nil
+              cancelButtonTitle:nil
+              otherButtonTitles:@"OK", nil
+              ] show];
+        }
+    }
 }
 
+// imageUrlArray をコピーしていく場合の処理
 - (void)copyImageUrlArray:(NSArray *)images
 {
     imageUrlArray =[NSMutableArray array];
     imageArray = [NSMutableArray array];
+    for (int i = 0; i < [images count]; i++) {
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        [dic setObject:@YES forKey:@"check"];
+        [dic setObject:[images objectAtIndex:i] forKey:@"contents"];
+        [imageUrlArray addObject:dic];
+        [imageArray addObject:[NSNull null]];
+    }
+}
+
+// imageUrlArray に 追加していく場合の処理
+- (void)addImageUrlArray:(NSArray *)images
+{
     for (int i = 0; i < [images count]; i++) {
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];
         [dic setObject:@YES forKey:@"check"];
@@ -81,6 +138,10 @@
       cancelButtonTitle:nil
       otherButtonTitles:@"OK", nil
       ] show];
+    
+    // 途中まで読まれてしまったものは一度クリアする
+    [self variableInitExceptSourceHtmlUrl];
+    
     // 接続に失敗した場合も 引っ張って更新のあれ 止めてあげる
     [self stopRefreshControl];
 }

@@ -10,6 +10,7 @@
 
 @protocol NGHTMLGetterDelegate<NSObject>
 -(void)NGHTMLGetterDelegateDidFinishedLoad:(NSArray*)images;
+-(void)NGHTMLGetterDelegateDidFinishedGetMaxPage:(NSInteger)page;
 -(void)NGHTMLGetterDelegateDidConnectionFailed;
 @end
 

@@ -49,6 +49,9 @@
     
     [self deleteReturnInOdaimokuArray];
     
+    // 一つ目に必ずRSSのタイトルが入ってしまうため、取り除く
+    [odaimokuArray removeObjectAtIndex:0];
+    
     // デリゲート先がちゃんと「didFinishedLoad」というメソッドを持っているか?
     if ([self.delegate respondsToSelector:@selector(NGTopicListGetterDelegateDidFinishedLoad:)]) {
         [self.delegate NGTopicListGetterDelegateDidFinishedLoad:odaimokuArray];

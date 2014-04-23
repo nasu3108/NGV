@@ -14,6 +14,8 @@
     NSMutableArray *imageUrlArray;
     NSMutableArray *imageArray;
     NSString *sourceHtmlUrl;
+    NSInteger maxPage;
+    NSInteger loadPages;
 }
 
 - (void)refreshOccured:(id)sender;

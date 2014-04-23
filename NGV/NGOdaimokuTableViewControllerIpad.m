@@ -15,7 +15,6 @@
     [super viewDidLoad];
     
     ngViewControllerBase = [NGViewControllerBase alloc];
-    [ngViewControllerBase variableInit];
     
     [odaimoku_table_view setDataSource:self];
     [odaimoku_table_view setDelegate:self];
