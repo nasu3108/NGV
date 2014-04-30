@@ -15,6 +15,7 @@
     [super viewDidLoad];
     
     ngViewControllerBase = [NGViewControllerBase alloc];
+    [ngViewControllerBase setUi_view_controller:self];
     
     [odaimoku_table_view setDataSource:self];
     [odaimoku_table_view setDelegate:self];
@@ -43,7 +44,7 @@
 
 - (IBAction)downloadImages:(id)sender
 {
-    [ngViewControllerBase downloadImages:sender];
+    [ngViewControllerBase showMenu:sender];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,6 +57,8 @@
 {
     [ngViewControllerBase variableInit];
     [ngViewControllerBase setSourceHtmlUrl:[[odaimokuUrlArray objectAtIndex:indexPath.row] objectForKey:@"link"]];
+    NSString *str = [[odaimokuUrlArray objectAtIndex:indexPath.row] objectForKey:@"title"];
+    [ngViewControllerBase setSourceHtmlTitle:str];
     [ngViewControllerBase getImage];
 }
 

@@ -103,6 +103,8 @@
     if(controller) {
         [controller variableInit];
         [controller setSourceHtmlUrl:[[odaimokuUrlArray objectAtIndex:indexPath.row] objectForKey:@"link"]];
+        NSString *str = [[odaimokuUrlArray objectAtIndex:indexPath.row] objectForKey:@"title"];
+        [controller setSourceHtmlTitle:str];
         [controller getImage];
         [self.navigationController pushViewController:controller animated:YES];
     }

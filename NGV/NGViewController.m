@@ -16,6 +16,7 @@
 - (void)variableInit
 {
     base = [NGViewControllerBase alloc];
+    [base setUi_view_controller:self];
     [base variableInit];    
 }
 
@@ -41,6 +42,11 @@
     [base setSourceHtmlUrl:url];
 }
 
+- (void)setSourceHtmlTitle:(NSString *)title
+{
+    [base setSourceHtmlTitle:title];
+}
+
 - (void)getImage
 {
     [base getImage];
@@ -48,7 +54,7 @@
 
 - (IBAction)downloadImages:(id)sender
 {
-    [base downloadImages:sender];
+    [base showMenu:sender];
 }
 
 - (void)didReceiveMemoryWarning

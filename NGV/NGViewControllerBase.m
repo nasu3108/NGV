@@ -10,9 +10,14 @@
 #import "UIAsyncImageView.h"
 #import "NGImageDownloader.h"
 #import "SVProgressHUD.h"
+#import "NGDownloadActivity.h"
+#import "NGSafariActivity.h"
 
 @implementation NGViewControllerBase
 @synthesize image_collection_view;
+@synthesize ui_view_controller;
+@synthesize sourceHtmlUrl;
+@synthesize sourceHtmlTitle;
 
 - (void)variableInit
 {
@@ -26,11 +31,6 @@
     [image_collection_view reloadData];
     maxPage = 1;
     loadPages = 1;
-}
-
-- (void)setSourceHtmlUrl:(NSString *)url
-{
-    sourceHtmlUrl = url;
 }
 
 - (void)getImage
@@ -233,25 +233,46 @@
     }
 }
 
-- (IBAction)downloadImages:(id)sender{
+- (IBAction)showMenu:(id)sender{
+    NSMutableString *str = [NSMutableString stringWithString:sourceHtmlTitle];
+    [str appendString:@" - "];
+    [str appendString:sourceHtmlUrl];
+    [str appendString:@" #NGV"];
+    NSLog(@"%@",str);
     
-    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
-    NGImageDownloader *loader = [NGImageDownloader alloc ];
-    loader.delegate = self;
-    [[loader initWithAsyncImageArray:imageUrlArray] imageDownload];
+    NGDownloadActivity *down = [[NGDownloadActivity alloc] init];
+    [down setBase:self];
+    
+    NGSafariActivity *safari = [[NGSafariActivity alloc] init];
+    [safari setUrlString:sourceHtmlUrl];
+    
+    NSArray *myItems = [NSArray arrayWithObjects:down,safari, nil];
+    NSArray *activityItems = [NSArray arrayWithObjects:str, nil];
+    UIActivityViewController *activityView = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:myItems];
+    [ui_view_controller presentViewController:activityView animated:YES completion:^{
+    }];
+    
 }
 
--(void)NGImageDownloaderDelegateDidFinishedLoad{
+- (void)downloadImages
+{
+     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
+     NGImageDownloader *loader = [NGImageDownloader alloc];
+     loader.delegate = self;
+     [[loader initWithAsyncImageArray:imageUrlArray] imageDownload];
+}
+
+- (void)NGImageDownloaderDelegateDidFinishedLoad{
     //[SVProgressHUD dismiss];
     [SVProgressHUD showSuccessWithStatus:@"保存完了！"];
 }
 
--(void)NGImageDownloaderDelegateDidConnectionFailed:(NSError*)error{
+- (void)NGImageDownloaderDelegateDidConnectionFailed:(NSError*)error{
     //[SVProgressHUD dismiss];
     [SVProgressHUD showSuccessWithStatus:@"保存失敗..."];
 }
 
--(void)NGImageDownloaderDelegateNotSelectImage{
+- (void)NGImageDownloaderDelegateNotSelectImage{
     [SVProgressHUD dismiss];
     UIAlertView *alert
     = [[UIAlertView alloc] initWithTitle:nil
@@ -260,7 +281,7 @@
     [alert show];
 }
 
--(void)viewWillDisappear
+- (void)viewWillDisappear
 {
     @synchronized(self){
         for (int i = 0; i < [imageUrlArray count]; ++i)

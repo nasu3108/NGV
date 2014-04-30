@@ -19,5 +19,6 @@
 - (void)variableInit;
 - (IBAction)downloadImages:(id)sender;
 - (void)setSourceHtmlUrl:(NSString *)url;
+- (void)setSourceHtmlTitle:(NSString *)title;
 - (void)getImage;
 @end

@@ -13,17 +13,19 @@
 @interface NGViewControllerBase : NSObject<NGHTMLGetterDelegate, UICollectionViewDataSource, UICollectionViewDelegate,NGImageDownloaderDelegate,UIAsyncImageViewDelegate>{
     NSMutableArray *imageUrlArray;
     NSMutableArray *imageArray;
-    NSString *sourceHtmlUrl;
     NSInteger maxPage;
     NSInteger loadPages;
 }
 
 - (void)refreshOccured:(id)sender;
 - (void)variableInit;
-- (IBAction)downloadImages:(id)sender;
-- (void)setSourceHtmlUrl:(NSString *)url;
+- (IBAction)showMenu:(id)sender;
+- (void)downloadImages;
 - (void)getImage;
--(void)viewWillDisappear;
+- (void)viewWillDisappear;
 
 @property IBOutlet UICollectionView *image_collection_view;
+@property UIViewController *ui_view_controller;
+@property NSString *sourceHtmlUrl;
+@property NSString *sourceHtmlTitle;
 @end
