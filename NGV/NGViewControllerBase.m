@@ -234,6 +234,15 @@
 }
 
 - (IBAction)showMenu:(id)sender{
+    if (sourceHtmlUrl == nil || sourceHtmlTitle == nil) {
+        UIAlertView *alert
+            = [[UIAlertView alloc] initWithTitle:nil
+                    message:@"選択できるメニューはありません" delegate:nil
+                    cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [alert show];
+        return;
+    }
+    
     NSMutableString *str = [NSMutableString stringWithString:sourceHtmlTitle];
     [str appendString:@" - "];
     [str appendString:sourceHtmlUrl];
