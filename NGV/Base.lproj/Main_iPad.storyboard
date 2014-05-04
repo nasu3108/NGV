@@ -55,6 +55,7 @@
                                                 <constraint firstItem="pB4-h8-MA8" firstAttribute="leading" secondItem="kOB-l6-H67" secondAttribute="leading" constant="11" id="guy-2F-dCf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
