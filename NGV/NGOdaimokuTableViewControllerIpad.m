@@ -10,11 +10,19 @@
 
 @implementation NGOdaimokuTableViewControllerIpad
 
+- (void)setNadViews
+{
+    NSDictionary *nendId = [NSDictionary dictionaryWithObjectsAndKeys:
+                            @"2e0b9e0b3f40d952e6000f1a8c4d455fffc4ca3a", @"nendID",
+                            @"70999", @"spotID",nil];
+    [self addNADViewTo:nand_view rect:CGRectMake( 0, 0, 728, 90) nendID:nendId];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    ngViewControllerBase = [NGViewControllerBase alloc];
+    ngViewControllerBase = [NGMainViewControllerBase alloc];
     [ngViewControllerBase setUi_view_controller:self];
     
     [odaimoku_table_view setDataSource:self];

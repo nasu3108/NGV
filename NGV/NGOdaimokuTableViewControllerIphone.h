@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "NGOdaimokuTableViewController.h"
+#import "NendAd/NADView.h"
 
-@interface NGOdaimokuTableViewControllerIphone : NGOdaimokuTableViewController
+@interface NGOdaimokuTableViewControllerIphone : NGOdaimokuTableViewController{
+    IBOutlet UIView *odaimoku_nand_view;
+}
 
 @end

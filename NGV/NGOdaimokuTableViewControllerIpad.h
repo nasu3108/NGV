@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "NGOdaimokuTableViewController.h"
-#import "NGViewControllerBase.h"
+#import "NGMainViewControllerBase.h"
 
 @interface NGOdaimokuTableViewControllerIpad :NGOdaimokuTableViewController{
     IBOutlet UICollectionView *image_collection_view;
-    NGViewControllerBase *ngViewControllerBase;
+    NGMainViewControllerBase *ngViewControllerBase;
+    IBOutlet UIView *nand_view;
 }
 
 - (IBAction)downloadImages:(id)sender;

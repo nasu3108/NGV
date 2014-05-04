@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NGViewControllerBase.h"
+#import "NGMainViewControllerBase.h"
 
 @interface NGDownloadActivity : UIActivity
 
-@property NGViewControllerBase *base;
+@property NGMainViewControllerBase *base;
 
 @end

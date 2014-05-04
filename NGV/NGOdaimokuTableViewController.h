@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "NGTopicListGetter.h"
+#import "NGViewController.h"
 
-@interface NGOdaimokuTableViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,NGTopicListGetterDelegate>{
+@interface NGOdaimokuTableViewController : NGViewController<UITableViewDelegate,UITableViewDataSource,NGTopicListGetterDelegate>{
     IBOutlet UITableView *odaimoku_table_view;
     NSMutableArray *odaimokuUrlArray;
 }

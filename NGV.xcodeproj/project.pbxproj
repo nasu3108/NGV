@@ -16,10 +16,15 @@
 		CF1374E318972C2B00C757B0 /* NGTopicListGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1374E218972C2B00C757B0 /* NGTopicListGetter.m */; };
 		CF70D71519113B45009CB8C7 /* NGDownloadActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = CF70D71419113B45009CB8C7 /* NGDownloadActivity.m */; };
 		CF70D71819114B2A009CB8C7 /* NGSafariActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = CF70D71719114B2A009CB8C7 /* NGSafariActivity.m */; };
+		CF937E3C1914A87100452EC7 /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF937E361914A87100452EC7 /* libNendAd.a */; };
+		CF937E3D1914A87100452EC7 /* NADView_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = CF937E3B1914A87100452EC7 /* NADView_readme.txt */; };
+		CF937E3F1914A8A500452EC7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF937E3E1914A8A500452EC7 /* Security.framework */; };
+		CF937E411914A8B200452EC7 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF937E401914A8B200452EC7 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		CF937E4419152B8A00452EC7 /* NGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF937E4319152B8A00452EC7 /* NGViewController.m */; };
 		CFA49B0E188A348700355F0E /* UIAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA49B0D188A348700355F0E /* UIAsyncImageView.m */; };
 		CFAEDAE918DD643E0015A2B4 /* NGOdaimokuTableViewControllerIpad.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAEDAE818DD643E0015A2B4 /* NGOdaimokuTableViewControllerIpad.m */; };
 		CFAEDAEF18DD68210015A2B4 /* NGOdaimokuTableViewControllerIphone.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAEDAEE18DD68210015A2B4 /* NGOdaimokuTableViewControllerIphone.m */; };
-		CFD6672818DD7C38000EF257 /* NGViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD6672718DD7C38000EF257 /* NGViewControllerBase.m */; };
+		CFD6672818DD7C38000EF257 /* NGMainViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD6672718DD7C38000EF257 /* NGMainViewControllerBase.m */; };
 		CFD6E83618D7C17500CBA020 /* NGImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD6E83518D7C17500CBA020 /* NGImageDownloader.m */; };
 		CFDE6D941861514D00DDFB67 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDE6D911861514D00DDFB67 /* HTMLNode.m */; };
 		CFDE6D951861514D00DDFB67 /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDE6D931861514D00DDFB67 /* HTMLParser.m */; };
@@ -32,7 +37,7 @@
 		CFEFED1418568CF900A5AC7C /* NGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEFED1318568CF900A5AC7C /* NGAppDelegate.m */; };
 		CFEFED1718568CF900A5AC7C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFEFED1518568CF900A5AC7C /* Main_iPhone.storyboard */; };
 		CFEFED1A18568CF900A5AC7C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFEFED1818568CF900A5AC7C /* Main_iPad.storyboard */; };
-		CFEFED1D18568CF900A5AC7C /* NGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEFED1C18568CF900A5AC7C /* NGViewController.m */; };
+		CFEFED1D18568CF900A5AC7C /* NGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEFED1C18568CF900A5AC7C /* NGMainViewController.m */; };
 		CFEFED1F18568CF900A5AC7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFEFED1E18568CF900A5AC7C /* Images.xcassets */; };
 		CFEFED2618568CF900A5AC7C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFEFED2518568CF900A5AC7C /* XCTest.framework */; };
 		CFEFED2718568CF900A5AC7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFEFED0318568CF900A5AC7C /* Foundation.framework */; };
@@ -67,14 +72,24 @@
 		CF70D71419113B45009CB8C7 /* NGDownloadActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGDownloadActivity.m; sourceTree = "<group>"; };
 		CF70D71619114B2A009CB8C7 /* NGSafariActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGSafariActivity.h; sourceTree = "<group>"; };
 		CF70D71719114B2A009CB8C7 /* NGSafariActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGSafariActivity.m; sourceTree = "<group>"; };
+		CF937E361914A87100452EC7 /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
+		CF937E371914A87100452EC7 /* NADIconArrayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconArrayView.h; sourceTree = "<group>"; };
+		CF937E381914A87100452EC7 /* NADIconLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconLoader.h; sourceTree = "<group>"; };
+		CF937E391914A87100452EC7 /* NADIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconView.h; sourceTree = "<group>"; };
+		CF937E3A1914A87100452EC7 /* NADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADView.h; sourceTree = "<group>"; };
+		CF937E3B1914A87100452EC7 /* NADView_readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NADView_readme.txt; sourceTree = "<group>"; };
+		CF937E3E1914A8A500452EC7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CF937E401914A8B200452EC7 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		CF937E4219152B8A00452EC7 /* NGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGViewController.h; sourceTree = "<group>"; };
+		CF937E4319152B8A00452EC7 /* NGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGViewController.m; sourceTree = "<group>"; };
 		CFA49B0C188A348700355F0E /* UIAsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAsyncImageView.h; sourceTree = "<group>"; };
 		CFA49B0D188A348700355F0E /* UIAsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAsyncImageView.m; sourceTree = "<group>"; };
 		CFAEDAE718DD643E0015A2B4 /* NGOdaimokuTableViewControllerIpad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGOdaimokuTableViewControllerIpad.h; sourceTree = "<group>"; };
 		CFAEDAE818DD643E0015A2B4 /* NGOdaimokuTableViewControllerIpad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGOdaimokuTableViewControllerIpad.m; sourceTree = "<group>"; };
 		CFAEDAED18DD68210015A2B4 /* NGOdaimokuTableViewControllerIphone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGOdaimokuTableViewControllerIphone.h; sourceTree = "<group>"; };
 		CFAEDAEE18DD68210015A2B4 /* NGOdaimokuTableViewControllerIphone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGOdaimokuTableViewControllerIphone.m; sourceTree = "<group>"; };
-		CFD6672618DD7C38000EF257 /* NGViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGViewControllerBase.h; sourceTree = "<group>"; };
-		CFD6672718DD7C38000EF257 /* NGViewControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGViewControllerBase.m; sourceTree = "<group>"; };
+		CFD6672618DD7C38000EF257 /* NGMainViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGMainViewControllerBase.h; sourceTree = "<group>"; };
+		CFD6672718DD7C38000EF257 /* NGMainViewControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGMainViewControllerBase.m; sourceTree = "<group>"; };
 		CFD6E83418D7C17500CBA020 /* NGImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGImageDownloader.h; sourceTree = "<group>"; };
 		CFD6E83518D7C17500CBA020 /* NGImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGImageDownloader.m; sourceTree = "<group>"; };
 		CFDE6D901861514D00DDFB67 /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
@@ -94,8 +109,8 @@
 		CFEFED1318568CF900A5AC7C /* NGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGAppDelegate.m; sourceTree = "<group>"; };
 		CFEFED1618568CF900A5AC7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		CFEFED1918568CF900A5AC7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		CFEFED1B18568CF900A5AC7C /* NGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGViewController.h; sourceTree = "<group>"; };
-		CFEFED1C18568CF900A5AC7C /* NGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGViewController.m; sourceTree = "<group>"; };
+		CFEFED1B18568CF900A5AC7C /* NGMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGMainViewController.h; sourceTree = "<group>"; };
+		CFEFED1C18568CF900A5AC7C /* NGMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGMainViewController.m; sourceTree = "<group>"; };
 		CFEFED1E18568CF900A5AC7C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CFEFED2418568CF900A5AC7C /* NGVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NGVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFEFED2518568CF900A5AC7C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -109,11 +124,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF937E411914A8B200452EC7 /* AdSupport.framework in Frameworks */,
+				CF937E3F1914A8A500452EC7 /* Security.framework in Frameworks */,
 				CF07D31418D88E8D007BAAFC /* QuartzCore.framework in Frameworks */,
 				CFDE6D971861540F00DDFB67 /* libxml2.dylib in Frameworks */,
 				CFEFED0618568CF900A5AC7C /* CoreGraphics.framework in Frameworks */,
 				CFEFED0818568CF900A5AC7C /* UIKit.framework in Frameworks */,
 				CFEFED0418568CF900A5AC7C /* Foundation.framework in Frameworks */,
+				CF937E3C1914A87100452EC7 /* libNendAd.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +174,19 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		CF937E351914A87100452EC7 /* NendAd */ = {
+			isa = PBXGroup;
+			children = (
+				CF937E361914A87100452EC7 /* libNendAd.a */,
+				CF937E371914A87100452EC7 /* NADIconArrayView.h */,
+				CF937E381914A87100452EC7 /* NADIconLoader.h */,
+				CF937E391914A87100452EC7 /* NADIconView.h */,
+				CF937E3A1914A87100452EC7 /* NADView.h */,
+				CF937E3B1914A87100452EC7 /* NADView_readme.txt */,
+			);
+			path = NendAd;
+			sourceTree = "<group>";
+		};
 		CFDE6D8F1861504D00DDFB67 /* HTML-Parser */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +220,8 @@
 		CFEFED0218568CF900A5AC7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF937E401914A8B200452EC7 /* AdSupport.framework */,
+				CF937E3E1914A8A500452EC7 /* Security.framework */,
 				CF07D31318D88E8D007BAAFC /* QuartzCore.framework */,
 				CFDE6D961861540F00DDFB67 /* libxml2.dylib */,
 				CFEFED0318568CF900A5AC7C /* Foundation.framework */,
@@ -202,29 +235,31 @@
 		CFEFED0918568CF900A5AC7C /* NGV */ = {
 			isa = PBXGroup;
 			children = (
+				CF937E351914A87100452EC7 /* NendAd */,
 				CF07D30D18D88E10007BAAFC /* SVProgressHUD */,
 				CFDE6D8F1861504D00DDFB67 /* HTML-Parser */,
-				CFEFED1218568CF900A5AC7C /* NGAppDelegate.h */,
 				CF1374DA1897271800C757B0 /* resources */,
 				CFEFED1318568CF900A5AC7C /* NGAppDelegate.m */,
+				CFEFED1218568CF900A5AC7C /* NGAppDelegate.h */,
 				CFEFED1518568CF900A5AC7C /* Main_iPhone.storyboard */,
+				CFEFED1818568CF900A5AC7C /* Main_iPad.storyboard */,
+				CF937E4219152B8A00452EC7 /* NGViewController.h */,
+				CF937E4319152B8A00452EC7 /* NGViewController.m */,
 				CF1374DE18972A2E00C757B0 /* NGOdaimokuTableViewController.h */,
 				CF1374DF18972A2E00C757B0 /* NGOdaimokuTableViewController.m */,
 				CFAEDAE718DD643E0015A2B4 /* NGOdaimokuTableViewControllerIpad.h */,
 				CFAEDAE818DD643E0015A2B4 /* NGOdaimokuTableViewControllerIpad.m */,
 				CFAEDAED18DD68210015A2B4 /* NGOdaimokuTableViewControllerIphone.h */,
 				CFAEDAEE18DD68210015A2B4 /* NGOdaimokuTableViewControllerIphone.m */,
-				CFEFED1818568CF900A5AC7C /* Main_iPad.storyboard */,
-				CFEFED1B18568CF900A5AC7C /* NGViewController.h */,
-				CFEFED1C18568CF900A5AC7C /* NGViewController.m */,
+				CFEFED1B18568CF900A5AC7C /* NGMainViewController.h */,
+				CFEFED1C18568CF900A5AC7C /* NGMainViewController.m */,
 				CFEFED1E18568CF900A5AC7C /* Images.xcassets */,
-				CFD6672618DD7C38000EF257 /* NGViewControllerBase.h */,
-				CFD6672718DD7C38000EF257 /* NGViewControllerBase.m */,
+				CFD6672618DD7C38000EF257 /* NGMainViewControllerBase.h */,
+				CFD6672718DD7C38000EF257 /* NGMainViewControllerBase.m */,
 				CF70D71619114B2A009CB8C7 /* NGSafariActivity.h */,
 				CF70D71719114B2A009CB8C7 /* NGSafariActivity.m */,
 				CF70D71319113B45009CB8C7 /* NGDownloadActivity.h */,
 				CF70D71419113B45009CB8C7 /* NGDownloadActivity.m */,
-				CFEFED0A18568CF900A5AC7C /* Supporting Files */,
 				CF05AC2D18568F150026988C /* NGHTMLGetter.h */,
 				CF05AC2E18568F150026988C /* NGHTMLGetter.m */,
 				CFA49B0C188A348700355F0E /* UIAsyncImageView.h */,
@@ -233,6 +268,7 @@
 				CF1374E218972C2B00C757B0 /* NGTopicListGetter.m */,
 				CFD6E83418D7C17500CBA020 /* NGImageDownloader.h */,
 				CFD6E83518D7C17500CBA020 /* NGImageDownloader.m */,
+				CFEFED0A18568CF900A5AC7C /* Supporting Files */,
 			);
 			path = NGV;
 			sourceTree = "<group>";
@@ -349,6 +385,7 @@
 				CF1374DD1897275900C757B0 /* OK.png in Resources */,
 				CF07D31118D88E55007BAAFC /* SVProgressHUD.bundle in Resources */,
 				CFEFED1A18568CF900A5AC7C /* Main_iPad.storyboard in Resources */,
+				CF937E3D1914A87100452EC7 /* NADView_readme.txt in Resources */,
 				CFEFED1F18568CF900A5AC7C /* Images.xcassets in Resources */,
 				CFEFED1718568CF900A5AC7C /* Main_iPhone.storyboard in Resources */,
 				CFEFED0E18568CF900A5AC7C /* InfoPlist.strings in Resources */,
@@ -372,9 +409,10 @@
 			files = (
 				CFA49B0E188A348700355F0E /* UIAsyncImageView.m in Sources */,
 				CFDE6D941861514D00DDFB67 /* HTMLNode.m in Sources */,
+				CF937E4419152B8A00452EC7 /* NGViewController.m in Sources */,
 				CF70D71519113B45009CB8C7 /* NGDownloadActivity.m in Sources */,
 				CFDE6D951861514D00DDFB67 /* HTMLParser.m in Sources */,
-				CFEFED1D18568CF900A5AC7C /* NGViewController.m in Sources */,
+				CFEFED1D18568CF900A5AC7C /* NGMainViewController.m in Sources */,
 				CF70D71819114B2A009CB8C7 /* NGSafariActivity.m in Sources */,
 				CF1374E318972C2B00C757B0 /* NGTopicListGetter.m in Sources */,
 				CFAEDAEF18DD68210015A2B4 /* NGOdaimokuTableViewControllerIphone.m in Sources */,
@@ -382,7 +420,7 @@
 				CF05AC2F18568F150026988C /* NGHTMLGetter.m in Sources */,
 				CFEFED1018568CF900A5AC7C /* main.m in Sources */,
 				CFD6E83618D7C17500CBA020 /* NGImageDownloader.m in Sources */,
-				CFD6672818DD7C38000EF257 /* NGViewControllerBase.m in Sources */,
+				CFD6672818DD7C38000EF257 /* NGMainViewControllerBase.m in Sources */,
 				CFEFED1418568CF900A5AC7C /* NGAppDelegate.m in Sources */,
 				CF07D31218D88E55007BAAFC /* SVProgressHUD.m in Sources */,
 				CF1374E018972A2E00C757B0 /* NGOdaimokuTableViewController.m in Sources */,
@@ -533,7 +571,10 @@
 				INFOPLIST_FILE = "NGV/NGV-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "-lxml2";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/NendAd",
+					"$(PROJECT_DIR)/NGV/NendAd",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -558,7 +599,10 @@
 				INFOPLIST_FILE = "NGV/NGV-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "-lxml2";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/NendAd",
+					"$(PROJECT_DIR)/NGV/NendAd",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

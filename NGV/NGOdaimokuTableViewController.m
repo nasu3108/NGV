@@ -7,7 +7,7 @@
 //
 
 #import "NGOdaimokuTableViewController.h"
-#import "NGViewController.h"
+#import "NGMainViewController.h"
 
 @implementation NGOdaimokuTableViewController
 
@@ -98,7 +98,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // 次画面を指定して遷移
-    NGViewController  *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"NGViewController1"];
+    NGMainViewController  *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"NGMainViewController1"];
     
     if(controller) {
         [controller variableInit];
